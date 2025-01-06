@@ -1,3 +1,3 @@
 # mongodb_api
 
-#Only sing mongodb, not mongoose
+#Only using mongodb, not mongoose
