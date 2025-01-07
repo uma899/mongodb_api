@@ -7,12 +7,8 @@ const app = express();
 
 app.use(cors());
 app.use(express.json());
-//app.use("/record", records);
+app.use("/record", records);
 
-
-app.get((req, res) => {
-  res.json("Working");
-})
 
 // start the Express server
 app.listen(PORT, () => {
