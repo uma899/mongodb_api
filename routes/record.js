@@ -13,12 +13,13 @@ const router = express.Router();
 
 // This section will help you get a list of all the records.
 router.get("/", async (req, res) => {
-  let collection = await db.collection("api_check");
+ /* let collection = await db.collection("api_check");
   let results = await collection.find({}).toArray();
-  res.send(results).status(200);
-  //res.send("dhdt").status(200);
+  res.send(results).status(200);*/
+  res.send("dhdt").status(200);
 });
 
+/*
 // This section will help you get a single record by id
 router.get("/:id", async (req, res) => {
   let collection = await db.collection("api_check");
@@ -79,5 +80,7 @@ router.delete("/:id", async (req, res) => {
     res.status(500).send("Error deleting record");
   }
 });
+
+*/
 
 export default router;
