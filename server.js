@@ -6,7 +6,7 @@ import users from "./routes/users.js";
 import 'dotenv/config'
 import products from "./routes/products.js";
 
-const PORT =  process.env.PORT;
+const PORT =  5000;
 const app = express();
 
 //app.use('/static', express.static('public'))
