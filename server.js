@@ -1,14 +1,22 @@
 import express from "express";
 import cors from "cors";
 import records from "./routes/record.js";
+import users from "./routes/users.js";
 
-const PORT = 5050;
+import 'dotenv/config'
+import products from "./routes/products.js";
+
+const PORT =  process.env.PORT;
 const app = express();
+
+//app.use('/static', express.static('public'))
+app.use(express.static('public'))
 
 app.use(cors());
 app.use(express.json());
 app.use("/record", records);
-
+app.use("/users", users)
+app.use("/products", products)
 
 // start the Express server
 app.listen(PORT, () => {
