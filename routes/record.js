@@ -19,7 +19,7 @@ router.get("/", async (req, res) => {
  // res.send("dhdt").status(200);
 });
 
-/*
+
 // This section will help you get a single record by id
 router.get("/:id", async (req, res) => {
   let collection = await db.collection("api_check");
@@ -81,6 +81,6 @@ router.delete("/:id", async (req, res) => {
   }
 });
 
-*/
+
 
 export default router;
