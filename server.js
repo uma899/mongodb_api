@@ -3,7 +3,6 @@ import cors from "cors";
 import records from "./routes/record.js";
 import users from "./routes/users.js";
 
-import 'dotenv/config'
 import products from "./routes/products.js";
 
 const PORT =  5000;
