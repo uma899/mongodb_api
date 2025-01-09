@@ -82,4 +82,42 @@ users.delete("/:id", async (req, res) => {
   }
 });
 
+
+//Authentication
+users.post("/verify", async (req, res) => {
+
+  try {
+    let ph = req.body.phone;
+    let pass = req.body.password;
+
+    let collection = await db.collection("users");
+    let query = { phone: (parseInt(ph)) };
+    let result = await collection.findOne(query);
+
+    //console.log(req.body)
+    
+    if(result){
+      if(result.password === pass){
+        //res.json({"id": result._id}).status(200);
+        res.statusMessage = result._id;
+        res.status(200).end();
+      }
+
+      else{
+        res.status(401).send("Invalid :(");
+      }
+
+    }
+
+    else{
+      res.status(404).json({ error: "User not found" }); 
+    }
+
+  } catch (err) {
+    console.error(err);
+    res.status(500).send("Error adding record");
+  }
+});
+
+
 export default users;
