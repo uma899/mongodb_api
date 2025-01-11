@@ -102,7 +102,7 @@ users.post("/verify", async (req, res) => {
        /* res.statusText = result._id;
         res.status(200).end();*/
         //res.status(200);
-        res.status(200).json({ message: 'Data received successfully', data: data });
+        res.status(200).json({ message: 'Data received successfully', id: result._id });
       }
 
       else{
