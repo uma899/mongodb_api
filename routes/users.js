@@ -99,8 +99,10 @@ users.post("/verify", async (req, res) => {
     if(result){
       if(result.password === pass){
         //res.json({"id": result._id}).status(200);
-        res.statusText = result._id;
-        res.status(200).end();
+       /* res.statusText = result._id;
+        res.status(200).end();*/
+        //res.status(200);
+        res.status(200).json({ message: 'Data received successfully', data: data });
       }
 
       else{
